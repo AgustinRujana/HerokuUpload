@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <link href="style.css" rel="stylesheet">
+    <title>Productos - Formulario</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="row mt-5">
+        <form id='inputForm' action="/productos" enctype="application/x-www-form-urlencoded" autocomplete="off" method="POST">
+          <input class="inputProduct" type="text" placeholder="Title" name="title">
+          <input class="inputProduct" type="number" placeholder="Price" name="price">
+          <input class="inputProduct" type="text" placeholder="Thumbnail" name="thumbnail">
+          <input class="inputProduct" type="submit">
+        </form> 
+        <a href="productos/vista">Ir a la lista</a>
+      </div>
+      <div class="container">
+        <div class="row">
+            <h1>Lista de productos</h1>
+        </div>
+        <div class="row justify-content-center">
+          <table class="table-primary">   
+              <thead>
+                  <tr>
+                      <th scope="col">Image</th>
+                      <th scope="col">Description</th>
+                      <th scope="col">Price</th>
+                  </tr>
+              </thead>
+              <tbody id="cuerpoTablaProducts"></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <h1>Centro de mensajes</h1>
+      <form id='messagesForm'>
+        <input class="inputMessage" type="text" placeholder="Ingrese su E-Mail">
+        <input class="inputMessage" type="text" placeholder="Nombre">
+        <input class="inputMessage" type="text" placeholder="Apellido">
+        <input class="inputMessage" type="text" placeholder="Edad">
+        <input class="inputMessage" type="text" placeholder="Alias">
+        <input class="inputMessage" type="text" placeholder="Avatar">
+        <input class="inputMessage" type="text" placeholder="Mensaje">
+        <button>Enviar</button>
+      </form>
+      <table class="table-primary">
+        <tbody id="cuerpoTablaMsg"></tbody>
+      </table>
+    </div>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="socketIoClientSide.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+  </body>
+</html>
+
+
